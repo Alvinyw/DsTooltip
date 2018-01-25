@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>easyTooltip</title>
+<link rel="stylesheet" type="text/css" href="easyTooltip.css" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="easyTooltip.js"></script>
+<style>
+#test { margin:400px 0 0 400px;}
+</style>
+</head>
+
+<body>
+<div id="b">我是示例内容</div>
+<div id="test">Hover Me!</div>
+<script type="text/javascript">
+$("#test").easyTooltip({
+	xOffset: 20,      
+	yOffset: 25,
+	tooltipDir: "right",
+	clickRemove: true,
+	tooltipId: "mytip",
+	tooltipClass: "easyTooltip",
+	content: "<div class='tipBody'><span style='color:#fe8e14;'>I am </span><span style='color:red;'>a sample.</span></div>",
+	useElement: "b"
+});
+</script>
+</body>
+</html>
