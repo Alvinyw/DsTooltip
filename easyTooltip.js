@@ -3,10 +3,10 @@
     $.fn.easyTooltip = function(options){
         // default configuration properties
         var defaults = {
-			targetEleId: "",/*触发 tooltip 出现的元素 ID*/
+			targetEleId: "",/*触发 tooltip 的元素 ID*/
             xOffset: 10,/*tooltip 在 X 轴离鼠标的距离*/       
-            yOffset: 5,/*tooltip 在 Y 轴离鼠标的距离*/
-			tooltipDir: "top",
+            yOffset: 10,/*tooltip 在 Y 轴离鼠标的距离*/
+			tooltipDir: "top",/*tooltip 出现的方向*/
 			tooltipId: "easyTooltip",/*tooltip 最外层元素的 ID*/
 			tooltipClass: "easyTooltip",/*tooltip 最外层元素的 Class*/
             clickRemove: false,/*是否点击隐藏 tooltip*/
@@ -23,9 +23,12 @@
                 content = (options.existedContentId != "") ? $("#" + options.existedContentId).html() : content;
                 $(this).attr("title","");                                                  
                 if (content != "" && content != undefined){        
-                    $("body").append("<div id='"+ options.tooltipId +"' class='" + options.tooltipClass + "'>"+ content +"</div>");    
+                    $("body").append("<div id='"+ options.tooltipId +"' class='" + options.tooltipClass + "'>"+ content +"<span class='arw'></span></div>");    
                     $("#" + options.tooltipId)
                         .css({"position":"absolute","display":"none","padding":"10px 15px","background-color":"#aaa","font-size":"14px","line-height":"24px","color":"#000","opacity":"0.9","border-radius":"4px"}).fadeIn("fast");
+					$("#" + options.tooltipId + " .arw").css({"display":"inline-block","position":"absolute","width":"10px","height":"10px","background-color":"#aaa","-webkit-transform":"rotate(45deg)"});
+					
+					//设置 tooltip 的位置
 					updatePosition(e);
                 }
             },
@@ -60,29 +63,35 @@
 				  $("#" + options.tooltipId)
 					.css("top",($("#" + options.targetEleId).offset().top - $("#" + options.tooltipId).innerHeight() - options.yOffset) + "px")
 					.css("left",($("#" + options.targetEleId).offset().left + ($("#" + options.targetEleId).innerWidth() - $("#" + options.tooltipId).innerWidth())/2) + "px");
+				  $("#" + options.tooltipId + " .arw").css({"left":"50%","margin-left":"-5px","bottom":"-5px"});
 				  break;
 				case "bottom":
 				  $("#" + options.tooltipId)
 					.css("top",($("#" + options.targetEleId).offset().top + $("#" + options.targetEleId).innerHeight() + options.yOffset) + "px")
 					.css("left",($("#" + options.targetEleId).offset().left + ($("#" + options.targetEleId).innerWidth() - $("#" + options.tooltipId).innerWidth())/2) + "px");
+				  $("#" + options.tooltipId + " .arw").css({"left":"50%","margin-left":"-5px","top":"-5px"});
 				  break;
 				case "left":
 				  $("#" + options.tooltipId)
 					.css("top",($("#" + options.targetEleId).offset().top + ($("#" + options.targetEleId).innerHeight() - $("#" + options.tooltipId).innerHeight())/2) + "px")
 					.css("left",($("#" + options.targetEleId).offset().left - $("#" + options.tooltipId).innerWidth() - options.xOffset) + "px");
+				  $("#" + options.tooltipId + " .arw").css({"top":"50%","margin-top":"-5px","right":"-5px"});
 				  break;
 				case "right":
 				  $("#" + options.tooltipId)
 					.css("top",($("#" + options.targetEleId).offset().top + ($("#" + options.targetEleId).innerHeight() - $("#" + options.tooltipId).innerHeight())/2) + "px")
 					.css("left",($("#" + options.targetEleId).offset().left + $("#" + options.targetEleId).innerWidth() + options.xOffset) + "px");
+				  $("#" + options.tooltipId + " .arw").css({"top":"50%","margin-top":"-5px","left":"-5px"});
 				  break;
 				default:
 				  $("#" + options.tooltipId)
 					.css("top",($("#" + options.targetEleId).offset().top - $("#" + options.tooltipId).innerHeight() - options.yOffset) + "px")
 					.css("left",($("#" + options.targetEleId).offset().left + ($("#" + options.targetEleId).innerWidth() - $("#" + options.tooltipId).innerWidth())/2) + "px");
+				 $("#" + options.tooltipId + " .arw").css({"left":"50%","margin-left":"-5px","bottom":"-5px"});
 				}
 			}else {
 				//会随着鼠标的移动而移动
+				$("#" + options.tooltipId + " .arw").hide();
 				switch(options.tooltipDir)
 				{
 				case "top":
