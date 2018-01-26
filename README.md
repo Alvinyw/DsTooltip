@@ -18,7 +18,7 @@ $("#testId").easyTooltip({
 - 当 targetEleId 不为空时，tooltip 不会随鼠标的移动而移动；且 tooltip 会出现小三角；
 - 当 existedContentId 为空时，tooltip 里的内容是 content，当 existedContentId 不为空时，不管 content 是否为空，tooltip 里的内容都是 existedContentId；
 - tooltip 里小三角不是用伪元素画出来的，而是一个 class 为 arw 的 span 元素： **&lt;span class="arw">**
-- tooltip 的央视代码如下：
+- tooltip 的样式代码如下：
   ```css
   position: absolute;
   display: none;
@@ -30,7 +30,7 @@ $("#testId").easyTooltip({
   opacity: 0.9;
   border-radius: 4px;
   ```
-- 小三角 arw 的央视代码为：
+- 小三角 arw 的样式代码为：
   ```css
   display: inline-block;
   position: absolute;
@@ -46,4 +46,4 @@ $("#testId").easyTooltip({
 
 ## 工具调用示例
 
-[easyTooltip]()
+[easyTooltip](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
