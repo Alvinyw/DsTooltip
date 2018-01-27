@@ -22,6 +22,7 @@ $("#testId").easyTooltip({
 
   ```css
   position: absolute;
+  z-index: 10000;
   display: none;
   padding: 10px 15px;
   background-color: #aaa;
@@ -36,6 +37,7 @@ $("#testId").easyTooltip({
   ```css
   display: inline-block;
   position: absolute;
+  z-index: 10000;
   width: 10px;
   height: 10px;
   background-color: #aaa;
