@@ -1,6 +1,6 @@
 # easyTooltip: 鼠标移上去出现提示内容
 
-## 工具参数和调用
+## easyTooltip 的调用
 ```javascript
 $("#testId").easyTooltip({
 	targetEleId: "testId",/*触发 tooltip 的元素 ID*/
@@ -19,6 +19,7 @@ $("#testId").easyTooltip({
 - 当 existedContentId 为空时，tooltip 里的内容是 content，当 existedContentId 不为空时，不管 content 是否为空，tooltip 里的内容都是 existedContentId；
 - tooltip 里小三角不是用伪元素画出来的，而是一个 class 为 arw 的 span 元素： **&lt;span class="arw">**
 - tooltip 的样式代码如下：
+
   ```css
   position: absolute;
   display: none;
@@ -31,6 +32,7 @@ $("#testId").easyTooltip({
   border-radius: 4px;
   ```
 - 小三角 arw 的样式代码为：
+
   ```css
   display: inline-block;
   position: absolute;
@@ -44,6 +46,6 @@ $("#testId").easyTooltip({
   transform: rotate(45deg);
   ```
 
-## 工具调用示例
+## easyTooltip 调用示例
 
 [easyTooltip](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
