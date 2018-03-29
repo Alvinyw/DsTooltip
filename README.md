@@ -1,4 +1,4 @@
-# easyTooltip: 鼠标移上去出现提示内容
+# easyTooltip: 鼠标 hover 出现提示内容
 
 ## easyTooltip 介绍
 ```javascript
@@ -66,129 +66,191 @@ $(targetNode).easyTooltip({
 1. 默认用法（Tooltip 出现在上侧）
 
    ```html
+   <div id="test1" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test1").easyTooltip({
+		//tooltipDir: "top",//默认是 top
+		content: "<span style='color:#fe8e14;'>I am </span><span style='color:red;'>a sample.</span>"
+	});
    </script>
    ```
    
-2. 默认用法（Tooltip 出现在上侧）
+2. Tooltip 出现在右侧
 
    ```html
+   <div id="test2" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test2").easyTooltip({
+		tooltipDir: "right",
+		content: "I am a sample.",
+		tooltipPosition: ''
+	});
    </script>
    ```
    
-3. 默认用法（Tooltip 出现在上侧）
+3. Tooltip 出现在下侧
 
    ```html
+   <div id="test3" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test3").easyTooltip({
+		tooltipDir: "bottom",
+		content: "I am a sample.",
+		tooltipPosition: 'absolute'
+	});
    </script>
    ```
    
-4. 默认用法（Tooltip 出现在上侧）
+4. Tooltip 出现在左侧
 
    ```html
+   <div id="test4" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test4").easyTooltip({
+		tooltipDir: "left",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-5. 默认用法（Tooltip 出现在上侧）
+5. existedContentId 属性的使用
 
    ```html
+   <div id="test5" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test5").easyTooltip({
+		content: "Test Content.",/*设置了也没用，会被 $('#existedContentId').html() 替换*/
+		existedContentId: "existedContentId"
+	});
    </script>
    ```
    
-6. 默认用法（Tooltip 出现在上侧）
+6. clickRemove 属性的使用
 
    ```html
+   <div id="test6" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test6").easyTooltip({
+		content: "I am a sample.",
+		clickRemove: true //触发 click 时间之后 Tooltip 会隐藏
+	});
    </script>
    ```
    
-7. 默认用法（Tooltip 出现在上侧）
+7. xOffset/yOffset 属性的使用
 
    ```html
+   <div id="test7" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test7").easyTooltip({
+		xOffset: 100,     
+    	yOffset: 100,
+		tooltipDir: "right",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-8. 默认用法（Tooltip 出现在上侧）
+8. Tooltip 样式属性的使用
 
    ```html
+   <div id="test8" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test8").easyTooltip({
+		content: "I am a sample.",
+		/************ tooltip 样式参数 ************/
+		defaultRadius: "10px",
+		tooltipZindex: 10000,
+		tooltipPadding: "20px 30px",
+		tooltipBgColor: "rgba(0,0,0,0.7)",
+		tooltipFtSize: "18px",
+		tooltipLineHeight: "27px",
+		tooltipFtColor: "#fe8e14",
+		tooltipOpacity: 1,
+		tooltipArwBorderWidth: 10
+	});
    </script>
    ```
    
-9. 默认用法（Tooltip 出现在上侧）
+9. Tooltip 固定在上侧
 
    ```html
+   <div id="test9" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test9").easyTooltip({
+		tooltipPosition: 'relative',
+		//tooltipDir: "top",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-10. 默认用法（Tooltip 出现在上侧）
+10. Tooltip 固定在右侧
 
    ```html
+   <div id="test10" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test10").easyTooltip({
+		tooltipPosition: 'relative',
+		tooltipDir: "right",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-11. 默认用法（Tooltip 出现在上侧）
+11. Tooltip 固定在下侧
 
    ```html
+   <div id="test11" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test11").easyTooltip({
+		tooltipPosition: 'relative',
+		tooltipDir: "bottom",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-12. 默认用法（Tooltip 出现在上侧）
+12. Tooltip 固定在左侧
 
    ```html
+   <div id="test12" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+    $("#test12").easyTooltip({
+		tooltipPosition: 'relative',
+		tooltipDir: "left",
+		content: "I am a sample."
+	});
    </script>
    ```
    
-13. 默认用法（Tooltip 出现在上侧）
+13. 改变 Tooltip 小三角的大小
 
    ```html
+   <div id="test13" class="item">Hover Me!</div>
    
    <script type="text/javascript">
-   
+  	$("#test13").easyTooltip({
+		tooltipPosition: 'relative',
+		content: "I am a sample.",
+		/************ tooltip 样式参数 ************/
+		tooltipArwBorderWidth: 12
+	});
    </script>
    ```
-   
-14. 默认用法（Tooltip 出现在上侧）
-
-   ```html
-   
-   <script type="text/javascript">
-   
-   </script>
-   ```
-   
+      
 ## easyTooltip 示例
 
 [Demo](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
