@@ -2,19 +2,30 @@
 
 ## easyTooltip 的调用
 ```javascript
-$("#testId").easyTooltip({
-	targetEleId: "testId",/*触发 tooltip 的元素 ID*/
-	xOffset: 10,/*tooltip 在 X 轴离鼠标的距离*/       
-	yOffset: 10,/*tooltip 在 Y 轴离鼠标的距离*/
-	tooltipDir: "top",/*tooltip 出现的方向*/
+$(targetNode).easyTooltip({
+	/************ tooltip 结构参数 ************/
 	tooltipId: "easyTooltip",/*tooltip 最外层元素的 ID*/
 	tooltipClass: "easyTooltip",/*tooltip 最外层元素的 Class*/
+	content: "",/*设置 tooltip 的内容，可以包含 html 标签元素*/
+	existedContentId: "",/*将已有元素的内容作为 tooltip 的内容，若不为空，则将替换 content 所设置的内容*/
+	tooltipDir: "top",/*tooltip 出现的方向(top\right\bottom\left)*/
+	xOffset: 5,/*tooltip 在 X 轴离鼠标的距离*/       
+	yOffset: 5,/*tooltip 在 Y 轴离鼠标的距离*/
 	clickRemove: false,/*是否点击隐藏 tooltip*/
-	content: "",/*设置 tooltip 的内容，内容里可以包含 html 标签元素*/
-	existedContentId: ""/*将已有元素的内容作为 tooltip 的内容，若不为空，则将替换 content 所设置的内容*/
+	tooltipPosition: 'absolute',/*tooltip 是否会跟随鼠标移动(absolute\relative)*/
+	/************ tooltip 样式参数 ************/
+	defaultRadius: "3px",
+	tooltipZindex: 10000,
+	tooltipPadding: "10px 15px",
+	tooltipBgColor: "rgba(200,200,200,0.7)",
+	tooltipFtSize: "14px",
+	tooltipLineHeight: "24px",
+	tooltipFtColor: "#000",
+	tooltipOpacity: 1,
+	tooltipArwBorderWidth: 6
 });
 ```
-**参数之间的关系说明：**
+**参数说明：**
 - 当 targetEleId 不为空时，tooltip 不会随鼠标的移动而移动；且 tooltip 会出现小三角；
 - 当 existedContentId 为空时，tooltip 里的内容是 content，当 existedContentId 不为空时，不管 content 是否为空，tooltip 里的内容都是 existedContentId；
 - tooltip 里小三角不是用伪元素画出来的，而是一个 class 为 arw 的 span 元素： **&lt;span class="arw">**
