@@ -1,6 +1,9 @@
 # easyTooltip: 鼠标 hover 出现提示内容
 
 ## easyTooltip 介绍
+
+### 可供设置的参数及参数的默认值
+
 ```javascript
 $(targetNode).easyTooltip({
 	/************ tooltip 结构参数 ************/
@@ -254,3 +257,12 @@ $(targetNode).easyTooltip({
 ## easyTooltip 示例
 
 [Demo](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
+
+## easyTooltip 的优缺点
+
+### 优点：
+- 提供的参数比较全，可定制化成都教高；
+
+### 缺点：
+- 仅支持 hover 出现提示内容，暂时不支持 click 触发；
+- 依赖 j	query;

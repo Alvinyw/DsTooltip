@@ -111,12 +111,12 @@
 				case "top":
 				  toolTip
 					.css("top",(e.pageY - toolTip.innerHeight() - options.yOffset) + "px")
-					.css("left",(e.pageX) + "px");
+					.css("left",(e.pageX - toolTip.innerWidth()/2) + "px");
 				  break;
 				case "bottom":
 				  toolTip
 					.css("top",(e.pageY + options.yOffset) + "px")
-					.css("left",(e.pageX + options.xOffset) + "px");
+					.css("left",(e.pageX - toolTip.innerWidth()/2) + "px");
 				  break;
 				case "left":
 				  toolTip
@@ -131,7 +131,7 @@
 				default:
 				  toolTip
 					.css("top",(e.pageY - toolTip.innerHeight() - options.yOffset) + "px")
-					.css("left",(e.pageX) + "px");
+					.css("left",(e.pageX - toolTip.innerWidth()/2) + "px");
 				}
 			}
 		}
