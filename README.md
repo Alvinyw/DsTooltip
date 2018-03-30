@@ -256,7 +256,7 @@ $(targetNode).easyTooltip({
       
 ## easyTooltip 示例
 
-[Demo](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
+[Demo](https://alvinyw.github.io/Blog/DsTooltip/easyTooltip.html)
 
 ## easyTooltip 的优缺点
 
