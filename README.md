@@ -1,4 +1,4 @@
-# alvin-tooltip: 鼠标 hover 出现提示内容
+# easyTooltip: 鼠标 hover 出现提示内容
 
 ## 一、通过 Node 引用
 
