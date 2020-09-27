@@ -1,11 +1,63 @@
-# easyTooltip: 鼠标 hover 出现提示内容
+# alvin-tooltip: 鼠标 hover 出现提示内容
 
-## easyTooltip 介绍
+## 一、通过 Node 引用
 
-### 可供设置的参数及参数的默认值
+```javascript
+npm i alvin-tooltip
+```
+
+在 VUE 的 SPA 中的使用示例：
+
+```html
+<template>
+  <div id="main">
+    <div id="tooltip"></div>
+  </div>
+</template>
+<script>
+import createToolTip from "alvin-tooltip";
+export default {
+  name: "Tooltip",
+  data() {
+    return {
+      tooltip: "",
+    };
+  },
+  mounted() {
+    var cfg = {
+      targetNodeId: "tooltip",
+      tooltipDir: "right",
+      content: "I am a sample.",
+      tooltipPosition: "",
+    };
+    this.tooltip = createToolTip(cfg);
+  },
+};
+</script>
+<style lang="scss" scoped>
+#tooltip { width: 150px; height: 50px; line-height: 48px; background: #ddd; text-align: center; }
+</style>
+```
+
+## 二、通过 script 脚本引入
+```html
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="easyTooltip.min.js"></script>
+<div id="tooltip"></div>
+```
+引入上面两个文件之后，即可调用该插件了：
+```javascript
+$("#tooltip").easyTooltip({
+	tooltipDir: "left",
+	content: "I am a sample."
+});
+```
+
+## 三、插件可供设置的参数及参数的默认值
 
 ```javascript
 $(targetNode).easyTooltip({
+   targetNodeId: "tooltip", /*鼠标 hover 的目标节点*/
 	/************ tooltip 结构参数 ************/
 	tooltipId: "easyTooltip",/*tooltip 最外层元素的 ID*/
 	tooltipClass: "easyTooltip",/*tooltip 最外层元素的 Class*/
@@ -58,13 +110,8 @@ $(targetNode).easyTooltip({
   border-color: transparent;
   border-top-color: rgba(200,200,200,0.7);
   ```
-## easyTooltip 调用
 
-因为是基于 jQuery 开发的，所以要先引入 jQuery 文件：
-
-```javascript
-<script type="text/javascript" src="jquery.min.js"></script>
-```
+## 四、各参数用法示例
 
 1. 默认用法（Tooltip 出现在上侧）
 
@@ -254,15 +301,15 @@ $(targetNode).easyTooltip({
    </script>
    ```
       
-## easyTooltip 示例
+## 五、easyTooltip 示例
 
 [Demo](https://alvinyw.github.io/Blog/DsTooltip/easyTooltip.html)
 
-## easyTooltip 的优缺点
+## 六、easyTooltip 的优缺点
 
 ### 优点：
 - 提供的参数比较全，可定制化程度较高；
 
 ### 缺点：
 - 仅支持 hover 出现提示内容，暂时不支持 click 触发；
-- 依赖 j	query;
+- 依赖 jquery;
