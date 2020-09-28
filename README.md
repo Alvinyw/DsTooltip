@@ -1,4 +1,5 @@
-# easyTooltip: 鼠标 hover 出现提示内容
+# easyTooltip
+一款响应鼠标 hover 的内容提示插件
 
 ## 一、通过 Node 引用
 
@@ -59,7 +60,7 @@ $("#tooltip").easyTooltip({
 $(targetNode).easyTooltip({
    targetNodeId: "tooltip", /*鼠标 hover 的目标节点*/
 	/************ tooltip 结构参数 ************/
-	tooltipId: "easyTooltip",/*tooltip 最外层元素的 ID*/
+   tooltipId: "easyTooltip",/*tooltip 最外层元素的 ID*/
 	tooltipClass: "easyTooltip",/*tooltip 最外层元素的 Class*/
 	content: "",/*设置 tooltip 的内容，可以包含 html 标签元素*/
 	existedContentId: "",/*将已有元素的内容作为 tooltip 的内容，若不为空，则将替换 content 所设置的内容*/
